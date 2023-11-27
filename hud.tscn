@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6i5hn6cp628v"]
+
+[ext_resource type="Script" path="res://hud.gd" id="1_i5y62"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_i5y62")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 496.0
+offset_top = 364.0
+offset_right = 696.0
+offset_bottom = 464.0
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 497.0
+offset_top = 494.0
+offset_right = 697.0
+offset_bottom = 594.0
+text = "Quit"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 531.0
+offset_top = 25.0
+offset_right = 644.0
+offset_bottom = 77.0
+text = "GAME IS OVER!!!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]

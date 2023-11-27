@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://d0e3pfjt2o6di"]
+[gd_scene load_steps=4 format=3 uid="uid://d0e3pfjt2o6di"]
+
+[ext_resource type="PackedScene" uid="uid://dbk4ja7jogavd" path="res://player.tscn" id="1_cstwp"]
+[ext_resource type="PackedScene" uid="uid://bknh44ue7cwcy" path="res://mob.tscn" id="2_q0blk"]
+[ext_resource type="PackedScene" uid="uid://b6i5hn6cp628v" path="res://hud.tscn" id="3_as3fg"]
 
 [node name="world" type="Node2D"]
 
@@ -6,3 +10,9 @@
 offset_right = 40.0
 offset_bottom = 23.0
 text = "This is the world"
+
+[node name="Player" parent="." instance=ExtResource("1_cstwp")]
+
+[node name="Mob" parent="." instance=ExtResource("2_q0blk")]
+
+[node name="HUD" parent="." instance=ExtResource("3_as3fg")]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://bknh44ue7cwcy"]
+
+[ext_resource type="Script" path="res://mob.gd" id="1_5tdkl"]
+[ext_resource type="Texture2D" uid="uid://cfsr6ek1275pa" path="res://eagle-attack.png" id="2_0t5t0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1uc8"]
+atlas = ExtResource("2_0t5t0")
+region = Rect2(0, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bj5f"]
+atlas = ExtResource("2_0t5t0")
+region = Rect2(40, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onowv"]
+atlas = ExtResource("2_0t5t0")
+region = Rect2(80, 0, 40, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_novvr"]
+atlas = ExtResource("2_0t5t0")
+region = Rect2(120, 0, 40, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l4f16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1uc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bj5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onowv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_novvr")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 4.0
+}]
+
+[node name="Mob" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 2.66454e-15
+script = ExtResource("1_5tdkl")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l4f16")
+animation = &"new_animation"
+frame = 2
+frame_progress = 0.963231
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+metadata/_edit_group_ = true
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
