@@ -6,17 +6,17 @@
 script = ExtResource("1_8kwjf")
 
 [node name="Play" type="Button" parent="."]
-offset_left = 496.0
-offset_top = 279.0
-offset_right = 666.0
-offset_bottom = 333.0
+offset_left = 77.0
+offset_top = 20.0
+offset_right = 247.0
+offset_bottom = 74.0
 text = "Play"
 
 [node name="Quit" type="Button" parent="."]
-offset_left = 493.0
-offset_top = 384.0
-offset_right = 670.0
-offset_bottom = 433.0
+offset_left = 75.0
+offset_top = 96.0
+offset_right = 252.0
+offset_bottom = 145.0
 text = "Quit"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

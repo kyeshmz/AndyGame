@@ -6,17 +6,17 @@
 script = ExtResource("1_i5y62")
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 496.0
-offset_top = 364.0
-offset_right = 696.0
-offset_bottom = 464.0
+offset_left = 49.0
+offset_top = 22.0
+offset_right = 111.0
+offset_bottom = 53.0
 text = "Start"
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 497.0
-offset_top = 494.0
-offset_right = 697.0
-offset_bottom = 594.0
+offset_left = 56.0
+offset_top = 72.0
+offset_right = 118.0
+offset_bottom = 103.0
 text = "Quit"
 
 [node name="Message" type="Label" parent="."]
